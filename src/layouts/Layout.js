@@ -1,14 +1,14 @@
-import Header from "./Header";
+// import Header from "./Header";
 import Body from "./Body";
-import Footer from "./Footer";
+// import Footer from "./Footer";
 
 const Layout = ({ children }) => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Body />
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

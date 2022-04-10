@@ -7,24 +7,39 @@ import { login } from "../ controller/login";
 const SignInModal = ({ show, onHide }) => {
   const [alert_show, alert_setShow] = useState(false);
   const [err, setErr] = useState("");
-  const userInfo = { id: "", password: "" };
+
+  const [userInfo, setUserInfo] = useState({
+    email: "",
+    password: "",
+  });
 
   const onChange = (e) => {
-    console.log(e.target.value);
-    console.log(e.target.name);
-    userInfo[e.target.name] = e.target.value;
+    const { value, name } = e.target;
+    setUserInfo({
+      ...userInfo,
+      [name]: value,
+    });
     console.log(userInfo);
   };
 
   const onSubmitAccount = async () => {
-    const response_data = await login(userInfo);
-    if (response_data.ok) {
-      onHide();
-    } else {
+    if (userInfo.email == "") {
       alert_setShow(true);
-      setErr(response_data.error);
+      setErr("이메일을 입력해주세요");
+    } else if (userInfo.password == "") {
+      alert_setShow(true);
+      setErr("비밀번호를 입력해주세요");
+    } else {
+      const response_data = await login(userInfo);
+
+      if (response_data.ok) {
+        onHide();
+      } else {
+        alert_setShow(true);
+        setErr(response_data.error);
+      }
+      console.log(response_data);
     }
-    console.log(response_data);
   };
 
   return (

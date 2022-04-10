@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Modal, Button, Form, Container } from "react-bootstrap";
 import { GoogleLogin } from "react-google-login";
-// import { useDispatch } from "react-redux";
-
 import HorizontalLine from "../components/HorizonLine";
 import { register } from "../ controller/register";
 import Icon from "./icon";
@@ -10,30 +8,57 @@ import Icon from "./icon";
 const SignUpModal = ({ show, onHide }) => {
   const [alert_show, alert_setShow] = useState(false);
   const [err, setErr] = useState("");
-  // const dispatch = useDispatch();
 
-  const userInfo = {
+  const [userInfo, setUserInfo] = useState({
     username: "",
     email: "",
     password: "",
     confirm_password: "",
-  };
+  });
 
   const onChange = (e) => {
-    userInfo[e.target.name] = e.target.value;
+    const { value, name } = e.target;
+    setUserInfo({
+      ...userInfo,
+      [name]: value,
+    });
     console.log(userInfo);
   };
 
   const onSubmitAccount = async () => {
-    const response_data = await register(userInfo);
-    if (response_data.ok) {
-      alert("회원가입 완료");
-      onHide();
-    } else {
+    if (userInfo.username == "") {
       alert_setShow(true);
-      setErr(response_data.error);
+      setErr("Name");
+    } else if (userInfo.email == "") {
+      alert_setShow(true);
+      setErr("email");
+    } else if (userInfo.password == "") {
+      alert_setShow(true);
+      setErr("password");
+    } else if (userInfo.confirm_password == "") {
+      alert_setShow(true);
+      setErr("confirm_passowd");
+    } else {
+      const exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+
+      if (exptext.test(userInfo.email) == true) {
+        if (userInfo.password == userInfo.confirm_password) {
+          const response_data = await register(userInfo);
+          if (response_data.ok) {
+            alert("회원가입 완료");
+            onHide();
+          } else {
+            alert_setShow(true);
+            setErr(response_data.error);
+          }
+        } else {
+          alert_setShow(true);
+          setErr("비밀번호가 일치하지 않습ㄴ다");
+        }
+      } else {
+        alert("이메일형식이 올바르지 않습니다.");
+      }
     }
-    console.log(response_data);
   };
 
   const googleSuccess = async (res) => {
