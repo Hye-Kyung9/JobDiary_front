@@ -4,7 +4,7 @@ import { Container } from "react-bootstrap";
 const Footer = () => {
   return (
     <footer>
-      <Container>
+      <Container className="footer">
         <div style={{ textAlign: "center" }}>
           &copy; 2022 . All Rights Reserved.
         </div>

@@ -1,6 +1,6 @@
 // import Header from "./Header";
 import Body from "./Body";
-// import Footer from "./Footer";
+import Footer from "./Footer";
 
 const Layout = ({ children }) => {
   return (
@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
       {/* <Header /> */}
       <Body />
       {children}
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

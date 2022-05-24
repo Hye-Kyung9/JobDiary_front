@@ -4,11 +4,16 @@ import "./bootstrap.min.css";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+// import useNavigate from "react-router";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./NotFound";
-import Study from "./pages/community/Study";
+import PostMain from "./pages/post/PostMain";
 import Header from "./layouts/Header";
-import Footer from "./layouts/Footer";
+// import Footer from "./layouts/default";
+import Template from "./pages/resume/Template";
+import WriteResume from "./pages/resume/WriteResume";
+import Todo from "./pages/mypage/ToDo/TodoMain";
+import MyCalendar from "./pages/mypage/Cal/MyCalendar";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,21 +23,23 @@ ReactDOM.render(
         <Route path="/" element={<App />}></Route>
         <Route path="/jobs" element={<NotFound />}></Route>
         <Route path="/stack" element={<NotFound />}></Route>
-        <Route path="/study" element={<Study />}></Route>
+        <Route path="/study" element={<PostMain />}></Route>
+        <Route path="/study/QnA" element={<NotFound />}></Route>
+        <Route path="/interview" element={<NotFound />}></Route>
+        <Route path="/it-mbti" element={<NotFound />}></Route>
+        <Route path="/template" element={<Template />}></Route>
+        <Route path="/template/write_resume" element={<WriteResume />}></Route>
         <Route path="/my_resume" element={<NotFound />}></Route>
+
         <Route path="/good_resume" element={<NotFound />}></Route>
-        <Route path="/edit" element={<NotFound />}></Route>
         <Route path="/daybook" element={<NotFound />}></Route>
-        <Route path="/todolist" element={<NotFound />}></Route>
-        <Route path="/calendar" element={<NotFound />}></Route>
+        <Route path="/todolist" element={<Todo />}></Route>
+        <Route path="/calendar" element={<MyCalendar />}></Route>
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

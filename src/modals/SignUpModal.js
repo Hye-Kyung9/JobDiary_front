@@ -28,13 +28,13 @@ const SignUpModal = ({ show, onHide }) => {
   const onSubmitAccount = async () => {
     if (userInfo.username == "") {
       alert_setShow(true);
-      setErr("Name");
+      setErr("이름을 입력해주세요");
     } else if (userInfo.email == "") {
       alert_setShow(true);
-      setErr("email");
+      setErr("이메일을 입력해 주세요");
     } else if (userInfo.password == "") {
       alert_setShow(true);
-      setErr("password");
+      setErr("비밀번호를 입력해주세요");
     } else if (userInfo.confirm_password == "") {
       alert_setShow(true);
       setErr("confirm_passowd");
@@ -53,7 +53,7 @@ const SignUpModal = ({ show, onHide }) => {
           }
         } else {
           alert_setShow(true);
-          setErr("비밀번호가 일치하지 않습ㄴ다");
+          setErr("비밀번호가 일치하지 않습니다");
         }
       } else {
         alert("이메일형식이 올바르지 않습니다.");
@@ -63,8 +63,8 @@ const SignUpModal = ({ show, onHide }) => {
 
   const googleSuccess = async (res) => {
     console.log(res);
-    const result = res?.profileObj;
-    const token = res?.tokenId;
+    // const result = res?.profileObj;
+    // const token = res?.tokenId;
 
     try {
       // dispatch({ type: "AUTH", data: { result, token } });
@@ -80,7 +80,7 @@ const SignUpModal = ({ show, onHide }) => {
   return (
     <>
       <Modal show={alert_show} onHide={alert_setShow} variant="success">
-        <Modal.Header closeButton>
+        <Modal.Header>
           <Modal.Title>{err}</Modal.Title>
         </Modal.Header>
       </Modal>
@@ -92,7 +92,7 @@ const SignUpModal = ({ show, onHide }) => {
         centered
       >
         <Container>
-          <Modal.Header closeButton>
+          <Modal.Header>
             <Modal.Title id="contained-modal-title-vcenter">
               Sign Up
             </Modal.Title>

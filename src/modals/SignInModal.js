@@ -31,8 +31,11 @@ const SignInModal = ({ show, onHide }) => {
       setErr("비밀번호를 입력해주세요");
     } else {
       const response_data = await login(userInfo);
-
+      console.log(response_data);
       if (response_data.ok) {
+        window.sessionStorage.setItem("id", true);
+        window.sessionStorage.setItem("username", response_data.username);
+
         onHide();
       } else {
         alert_setShow(true);
@@ -45,7 +48,7 @@ const SignInModal = ({ show, onHide }) => {
   return (
     <>
       <Modal show={alert_show} onHide={alert_setShow} variant="success">
-        <Modal.Header closeButton>
+        <Modal.Header>
           <Modal.Title>{err}</Modal.Title>
         </Modal.Header>
       </Modal>
@@ -57,7 +60,7 @@ const SignInModal = ({ show, onHide }) => {
         centered
       >
         <Container>
-          <Modal.Header closeButton>
+          <Modal.Header>
             <Modal.Title id="contained-modal-title-vcenter">
               Sign In
             </Modal.Title>
