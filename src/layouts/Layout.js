@@ -1,13 +1,15 @@
 // import Header from "./Header";
 import Body from "./Body";
 import Footer from "./Footer";
+import JobPosting from "../pages/jobposting/JobPosting";
 
-const Layout = ({ children }) => {
+const Layout = ({}) => {
   return (
     <>
       {/* <Header /> */}
       <Body />
-      {children}
+      {/* {children} */}
+      <JobPosting />
       <Footer />
     </>
   );

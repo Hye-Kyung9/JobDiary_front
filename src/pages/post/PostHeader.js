@@ -1,9 +1,12 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 
 const PostHeader = () => {
   return (
-    <div>
+    <div className="study_head">
       <h1 className="study_with_me">Study With Me : </h1>
+
+      <Button className="new_post">글 작성</Button>
     </div>
   );
 };

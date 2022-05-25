@@ -62,7 +62,7 @@ const SignInModal = ({ show, onHide }) => {
         <Container>
           <Modal.Header>
             <Modal.Title id="contained-modal-title-vcenter">
-              Sign In!!
+              Sign In
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>

@@ -422,7 +422,9 @@ ul {
   /* 커서역할 */
   animation: typing 2.7s steps(12);
 }
-
+.study_head{
+  position: relative;
+}
 @keyframes typing {
   0% {
     width: 0%;
@@ -448,4 +450,12 @@ ul {
 
 .savebtn:hover{
   background-color: rgb(228, 228, 228);
+}
+
+.new_post{
+  position: inherit;
+  margin-top: 20%;
+  width: auto;
+
+
 }
