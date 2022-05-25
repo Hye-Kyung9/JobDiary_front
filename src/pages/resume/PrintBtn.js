@@ -1,10 +1,14 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 
-const PrintBtn = () => {
+const PrintBtn = (props) => {
   return (
     <>
-      <Button className="printbtn" variant="secondary">
+      <Button
+        className="printbtn"
+        variant="secondary"
+        onClick={props.handlePrint}
+      >
         print
       </Button>
     </>

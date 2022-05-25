@@ -6,6 +6,11 @@ import PrintBtn from "./PrintBtn";
 import { useReactToPrint } from "react-to-print";
 
 const WriteResume = () => {
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
+
   //갹채를 업데이트하기위해 useState안에 객체를 사용
   const [inputs, setInputs] = useState({
     name: "",
@@ -131,11 +136,14 @@ const WriteResume = () => {
             <SkillList countList={countList} />
           </div>
           <SaveBtn />
-          <PrintBtn />
+          {/*  */}
+          <PrintBtn handlePrint={handlePrint} />
         </div>
 
         {/* 여기서부터 오른쪽 렌더링 해주는 곳  */}
-        <RightPreview userInfo={inputs} />
+        <div ref={componentRef} className="sheet RightPreview">
+          <RightPreview userInfo={inputs} />
+        </div>
       </div>
       <Footer />
     </>
@@ -143,26 +151,25 @@ const WriteResume = () => {
 };
 
 const RightPreview = (props) => {
-  const componentRef = useRef();
-  const handlePrint = useReactToPrint({
-    content: () => componentRef.current,
-  });
+  // const componentRef = useRef();
+  // const handlePrint = useReactToPrint({
+  //   content: () => componentRef.current,
+  // });
   return (
     <>
-      <div ref={componentRef} className="sheet RightPreview">
-        <h1 className="preview_name">{props.userInfo.name}</h1>
-        <ul>
-          <li>이메일 : {props.userInfo.email}</li>
-          <li>주소 : {props.userInfo.address}</li>
-          <li>연락처 : {props.userInfo.phone}</li>
-        </ul>
-        <div className="preview_profile">{props.userInfo.profile}</div>
-        <ul>
-          <li>{props.userInfo.skill}</li>
-          <li>{props.userInfo.skill_detail}</li>
-        </ul>
-      </div>
-      <button onClick={handlePrint}>Print</button>
+      <h1 className="preview_name">{props.userInfo.name}</h1>
+      <ul>
+        <li>이메일 : {props.userInfo.email}</li>
+        <li>주소 : {props.userInfo.address}</li>
+        <li>연락처 : {props.userInfo.phone}</li>
+      </ul>
+      <div className="preview_profile">{props.userInfo.profile}</div>
+      <ul>
+        <li>{props.userInfo.skill}</li>
+        <li>{props.userInfo.skill_detail}</li>
+      </ul>
+
+      {/* <button onClick={handlePrint}>Print</button> */}
     </>
   );
 };
