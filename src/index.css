@@ -533,3 +533,20 @@ ul {
   clip:rect(0,0,0,0);
   border: 0;
 }
+
+.hstack {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: stretch;
+  margin-bottom: 20px;
+}
+
+.logo_img {
+  max-width: 72px;
+  border-radius: 40%;
+}
+
+.card{
+  padding: 20px;
+}
