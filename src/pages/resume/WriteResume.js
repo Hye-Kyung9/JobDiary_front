@@ -136,6 +136,8 @@ const WriteResume = () => {
             </button>
             <SkillList countList={countList} />
           </div>
+          <div className="filebox_title">첨부파일</div>
+          <div className="Write_skills_subtitle">PDF 첨부를 추천드려요!</div>
           <Attachments />
           <SaveBtn />
           <PrintBtn handlePrint={handlePrint} />

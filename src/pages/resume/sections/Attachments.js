@@ -6,7 +6,7 @@ const Attachments = () => {
   const [fileName, changeFileName] = useState("");
 
   return (
-    <div>
+    <div className="filebox">
       <input
         type="file"
         onChange={(e) => {

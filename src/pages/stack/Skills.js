@@ -1,7 +1,7 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
 import StackHeader from "./StackHeader";
-
+import StackBody from "./StackBody";
 const skills = () => {
   const GlobalStyle = createGlobalStyle`
   body {
@@ -12,6 +12,7 @@ const skills = () => {
     <div className="skills_main_layout">
       <GlobalStyle />
       <StackHeader />
+      <StackBody />
     </div>
   );
 };
