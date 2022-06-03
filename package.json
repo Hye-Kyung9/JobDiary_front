@@ -12,7 +12,7 @@
     "@testing-library/user-event": "^13.5.0",
     "antd": "^4.19.4",
     "axios": "^0.26.1",
-    "html2canvas": "^1.4.1",
+    "http-proxy-middleware": "^2.0.6",
     "jspdf": "^2.5.1",
     "material-table": "^2.0.3",
     "pdfmake": "^0.2.5",

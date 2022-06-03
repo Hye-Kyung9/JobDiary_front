@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=Gowun+Dodum&family=Hahmlet:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800');
 
-
 ol,
 ul {
   list-style: none;
@@ -221,7 +220,7 @@ ul {
   height: 100vh;
   width: 50vw;
   border-left: 2px solid #d9d9d9;
-  padding: 50px 5vw 0;
+  padding: 80px 8vw 0;
   font-family: 'Nanum Gothic', 'serif';
   font: #343a40;
 }
@@ -421,9 +420,11 @@ ul {
   /* 커서역할 */
   animation: typing 2.7s steps(12);
 }
-.study_head{
-  position: relative;
+
+.study_head {
+  /* position: relative; */
 }
+
 @keyframes typing {
   0% {
     width: 0%;
@@ -438,23 +439,62 @@ ul {
   }
 }
 
-.printbtn{
+.printbtn {
   width: 50%;
   background-color: #828282;
 }
 
-.savebtn{
+.savebtn {
   width: 50%;
 }
 
-.savebtn:hover{
+.savebtn:hover {
   background-color: rgb(228, 228, 228);
 }
 
-.new_post{
+.new_post {
   position: inherit;
   margin-top: 20%;
   width: auto;
-
-
+  margin-left: 80%;
+  margin-bottom: 10px;
 }
+
+.file_upload {
+  background: inherit;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  /* overflow: visible; */
+  cursor: pointer
+}
+
+.skills_main_layout {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.search {
+  border-radius: 1.25rem;
+}
+
+.header-heading-title {
+  padding: 20px 20px 20px 20px;
+  justify-content: center;
+  display: flex;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.form-control {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.0rem;
+  font-weight: 300;
+}
+/* .skills-header-search {
+  width: 90%
+} */

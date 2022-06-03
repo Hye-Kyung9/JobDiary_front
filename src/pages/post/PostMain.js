@@ -1,21 +1,16 @@
 import React from "react";
 import PostHeader from "./PostHeader";
 import PostList from "./PostList";
-import EditorComponent from "./EditorComponent";
-import { Route } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 const PostMain = () => {
-  let isAuthorized = sessionStorage.getItem("id");
-
-  {
-    isAuthorized ? <Route to="/study" /> : <Route to="/" />;
-  }
-
   return (
     <>
       <PostHeader />
+      <Button className="new_post" href="/new_post">
+        새 글 쓰기
+      </Button>
       <PostList />
-      <EditorComponent />
     </>
   );
 };

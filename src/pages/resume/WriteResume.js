@@ -4,6 +4,7 @@ import SkillList from "./sections/SkillList";
 import SaveBtn from "./SaveBtn";
 import PrintBtn from "./PrintBtn";
 import { useReactToPrint } from "react-to-print";
+import Attachments from "./sections/Attachments";
 
 const WriteResume = () => {
   const componentRef = useRef();
@@ -47,7 +48,7 @@ const WriteResume = () => {
       ...inputs,
       [name]: value,
     };
-    //만든 변수를 seInput으로 변경해준다.
+    //만든 변수를 setInput으로 변경해준다.
     setInputs(nextInputs);
   };
 
@@ -104,7 +105,7 @@ const WriteResume = () => {
               <input
                 id="phone"
                 name="phone"
-                placeholder="ex) xxxx-xxxx-xxxx"
+                placeholder="ex) xxx-xxxx-xxxx"
                 onChange={onChange}
                 value={phone} //가져온 타겟의 벨류값을 변경할때 사용한다.
               />
@@ -135,8 +136,8 @@ const WriteResume = () => {
             </button>
             <SkillList countList={countList} />
           </div>
+          <Attachments />
           <SaveBtn />
-          {/*  */}
           <PrintBtn handlePrint={handlePrint} />
         </div>
 
@@ -151,10 +152,6 @@ const WriteResume = () => {
 };
 
 const RightPreview = (props) => {
-  // const componentRef = useRef();
-  // const handlePrint = useReactToPrint({
-  //   content: () => componentRef.current,
-  // });
   return (
     <>
       <h1 className="preview_name">{props.userInfo.name}</h1>
@@ -168,8 +165,6 @@ const RightPreview = (props) => {
         <li>{props.userInfo.skill}</li>
         <li>{props.userInfo.skill_detail}</li>
       </ul>
-
-      {/* <button onClick={handlePrint}>Print</button> */}
     </>
   );
 };

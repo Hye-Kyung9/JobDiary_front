@@ -1,3 +1,4 @@
+//게시판 페이지 나눠주는
 import React from "react";
 
 const Pagination = ({ postsPerPage, totalPosts, currentPage, paginate }) => {

@@ -34,5 +34,3 @@ export default CommonTable;
 // 5. EditorComponent.js : 글 작성할 에디터 화면
 
 // 6. Pagination.js : 게시글 밑에 pagination component
-
-// 7. UploadFiles.js : 첨부파일 component

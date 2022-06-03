@@ -52,7 +52,7 @@ export default JobPosting;
 // import XMLParser from "react-xml-parser";
 // // import { createProxyMiddleware } from "http-proxy-middleware";
 
-// const JobPosting = (app) => {
+// const JobPosting = () => {
 //   const [users, setUsers] = useState(null);
 //   const [loading, setLoading] = useState(false);
 //   const [error, setError] = useState(null);
