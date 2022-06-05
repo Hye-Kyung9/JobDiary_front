@@ -9,7 +9,7 @@ const Layout = ({}) => {
       {/* <Header /> */}
       <Body />
       {/* {children} */}
-      <JobPosting />
+      {/* <JobPosting /> */}
       <Footer />
     </>
   );

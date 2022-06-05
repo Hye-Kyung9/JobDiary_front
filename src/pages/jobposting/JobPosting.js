@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import XMLParser from "react-xml-parser";
+import CommonTable from "../../components/boardtable/CommonTable";
+import CommonTableColumn from "../../components/boardtable/CommonTableColumn";
+import CommonTableRow from "../../components/boardtable/CommonTableRow";
+import "../../index.css";
 
 const JobPosting = () => {
   const [users, setUsers] = useState(null);
@@ -17,7 +21,7 @@ const JobPosting = () => {
         setLoading(true);
         //
         const response = await axios.get(
-          "https://cors-anywhere.herokuapp.com/https://openapi.work.go.kr/opi/opi/opia/wantedApi.do?authKey=WNL1TYI6B8EEDV4BS5BZ92VR1HK&callTp=L&returnType=XML&startPage=1&display=10&occupation=024"
+          "https://cors-anywhere.herokuapp.com/https://openapi.work.go.kr/opi/opi/opia/wantedApi.do?authKey=WNL1TYI6B8EEDV4BS5BZ92VR1HK&callTp=L&returnType=XML&startPage=1&display=100&occupation=024"
         );
         const xml = new XMLParser().parseFromString(response.data); // Assume xmlText contains the example XML
         const parsingData = xml.getElementsByTagName("wanted");
@@ -35,14 +39,37 @@ const JobPosting = () => {
   if (error) return <div>에러가 발생했습니다</div>;
   if (!users) return null;
   return (
-    <ul>
+    <CommonTable
+      headersName={[
+        "회사명",
+        "채용제목/임금/근무지역/근무형태",
+        "학력/경력",
+        "등록일",
+        "마감일",
+      ]}
+    >
       {users.map((user) => (
-        <li key={user.getElementsByTagName("wantedAuthNo")[0].value}>
-          {user.getElementsByTagName("title")[0].value}{" "}
-          {user.getElementsByTagName("company")[0].value}
-        </li>
+        <CommonTableRow>
+          <CommonTableColumn>
+            {user.getElementsByTagName("company")[0].value}
+          </CommonTableColumn>
+          <CommonTableColumn>
+            <a href={user.getElementsByTagName("wantedInfoUrl")[0].value}>
+              {user.getElementsByTagName("title")[0].value}
+            </a>
+          </CommonTableColumn>
+          <CommonTableColumn>
+            {user.getElementsByTagName("career")[0].value}
+          </CommonTableColumn>
+          <CommonTableColumn>
+            {user.getElementsByTagName("regDt")[0].value}
+          </CommonTableColumn>
+          <CommonTableColumn>
+            {user.getElementsByTagName("closeDt")[0].value}
+          </CommonTableColumn>
+        </CommonTableRow>
       ))}
-    </ul>
+    </CommonTable>
   );
 };
 export default JobPosting;

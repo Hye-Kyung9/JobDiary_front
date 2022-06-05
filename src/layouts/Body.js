@@ -3,7 +3,6 @@ import { Button } from "react-bootstrap";
 // import { Route, Switch, BrowserRouter, Link } from "react-router-dom";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { jobposting } from "../ controller/jobposting";
 
 // Import Swiper styles
 import "swiper/css";
@@ -78,7 +77,7 @@ export default function Body() {
           </div>
         </SwiperSlide>
       </Swiper>
-      <div>{jobposting}</div>
+      {/* <div>{jobposting}</div> */}
     </>
   );
 }

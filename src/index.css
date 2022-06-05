@@ -224,6 +224,36 @@ ul {
   font-family: 'Nanum Gothic', 'serif';
   font: #343a40;
 }
+
+/* fix print pdf */
+@media print {
+  .RightPreview {
+    display: block;
+    padding: 100px;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 30pt;
+    margin-bottom: 50px;
+
+  }
+
+  .preview_profile ul li {
+    font-size: 12pt;
+    margin-bottom: 10pt;
+    line-height: normal;
+  }
+
+  span {
+    font-size: 12pt;
+    margin-bottom: 20pt;
+    line-height: normal;
+
+  }
+}
+
+
 .Write_profile_title,
 .userinfo_title,
 .Write_skills_title,
@@ -244,7 +274,7 @@ ul {
 }
 
 .preview_name {
-  font-size: 1.8vw;
+  font-size: 1.0vw;
   font-weight: 500;
   margin-bottom: 30px;
 }
@@ -523,14 +553,15 @@ ul {
   border-radius: .25em;
 }
 
-.filebox input[type="fileName"] {  /* 파일 필드 숨기기 */
+.filebox input[type="fileName"] {
+  /* 파일 필드 숨기기 */
   position: absolute;
   width: 1px;
   height: 1px;
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip:rect(0,0,0,0);
+  clip: rect(0, 0, 0, 0);
   border: 0;
 }
 
@@ -547,6 +578,19 @@ ul {
   border-radius: 40%;
 }
 
-.card{
-  padding: 20px;
+.card {
+  padding: 30px;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  color:#53565b;
+}
+
+a:hover,
+a:active {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  /* background-color: #f59000; */
 }

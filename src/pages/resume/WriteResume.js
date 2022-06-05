@@ -156,13 +156,21 @@ const WriteResume = () => {
 const RightPreview = (props) => {
   return (
     <>
-      <h1 className="preview_name">{props.userInfo.name}</h1>
-      <ul>
-        <li>이메일 : {props.userInfo.email}</li>
-        <li>주소 : {props.userInfo.address}</li>
-        <li>연락처 : {props.userInfo.phone}</li>
-      </ul>
-      <div className="preview_profile">{props.userInfo.profile}</div>
+      <div className="preview_name">
+        <h1>{props.userInfo.name}</h1>
+      </div>
+      <div className="preview_profile">
+        {" "}
+        <ul>
+          <li>이메일 : {props.userInfo.email}</li>
+          <li>주소 : {props.userInfo.address}</li>
+          <li>연락처 : {props.userInfo.phone}</li>
+        </ul>
+      </div>
+
+      <div className="preview_profile">
+        <span>{props.userInfo.profile}</span>
+      </div>
       <ul>
         <li>{props.userInfo.skill}</li>
         <li>{props.userInfo.skill_detail}</li>

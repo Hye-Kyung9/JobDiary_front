@@ -16,6 +16,7 @@ import Todo from "./pages/mypage/ToDo/TodoMain";
 import MyCalendar from "./pages/mypage/Cal/MyCalendar";
 import Skills from "./pages/stack/Skills";
 import NewPost from "./pages/post/NewPost";
+import JobPosting from "./pages/jobposting/JobPosting";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -23,7 +24,7 @@ ReactDOM.render(
       <Header />
       <Routes>
         <Route path="/" element={<App />}></Route>
-        <Route path="/jobs" element={<NotFound />}></Route>
+        <Route path="/jobs" element={<JobPosting />}></Route>
         <Route path="/stack" element={<Skills />}></Route>
         <Route path="/study" element={<PostMain />}></Route>
         <Route path="/study/QnA" element={<NotFound />}></Route>
