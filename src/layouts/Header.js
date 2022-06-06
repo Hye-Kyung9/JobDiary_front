@@ -44,14 +44,13 @@ const Header = () => {
               </NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="mypage">
-              <NavDropdown.Item href="/daybook">일일 일기</NavDropdown.Item>
-              <NavDropdown.Divider />
+              {/* <NavDropdown.Item href="/daybook">일일 일기</NavDropdown.Item> */}
               <NavDropdown.Item href="/todolist">
                 To Do List ☑️
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/calendar">
-                내 일정(calendar)
+                Diary & Calendar
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>

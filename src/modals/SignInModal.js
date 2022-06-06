@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Modal, Button, Form, Container } from "react-bootstrap";
 import { GoogleLogin } from "react-google-login";
 import HorizontalLine from "../components/HorizonLine";
-import { login } from "../ controller/login";
+import { login } from "../controller/login";
 
 const SignInModal = ({ show, onHide }) => {
   const [alert_show, alert_setShow] = useState(false);

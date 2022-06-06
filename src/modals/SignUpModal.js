@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Modal, Button, Form, Container } from "react-bootstrap";
 import { GoogleLogin } from "react-google-login";
 import HorizontalLine from "../components/HorizonLine";
-import { register } from "../ controller/register";
+import { register } from "../controller/register";
 import Icon from "./icon";
 
 const SignUpModal = ({ show, onHide }) => {
