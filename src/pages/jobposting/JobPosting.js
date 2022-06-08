@@ -22,6 +22,7 @@ const JobPosting = () => {
         //
         const response = await axios.get(
           "https://cors-anywhere.herokuapp.com/https://openapi.work.go.kr/opi/opi/opia/wantedApi.do?authKey=WNL1TYI6B8EEDV4BS5BZ92VR1HK&callTp=L&returnType=XML&startPage=1&display=100&occupation=024"
+          // "http://localhost:4000/routes/openapi/worknet"
         );
         const xml = new XMLParser().parseFromString(response.data); // Assume xmlText contains the example XML
         const parsingData = xml.getElementsByTagName("wanted");

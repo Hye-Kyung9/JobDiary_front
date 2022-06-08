@@ -8,7 +8,8 @@ export const register = async ({ username, email, password }) => {
         username: username,
         email: email,
         password: password,
-      }
+      },
+      { withCredentials: false }
     );
     return response.data;
   } catch (err) {

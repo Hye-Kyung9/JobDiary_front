@@ -4,10 +4,9 @@ import { GoogleLogin } from "react-google-login";
 import HorizontalLine from "../components/HorizonLine";
 import { login } from "../controller/login";
 
-const SignInModal = ({ show, onHide }) => {
+const SignInModal = ({ show, onHide, authorized }) => {
   const [alert_show, alert_setShow] = useState(false);
   const [err, setErr] = useState("");
-
   const [userInfo, setUserInfo] = useState({
     email: "",
     password: "",
@@ -31,17 +30,15 @@ const SignInModal = ({ show, onHide }) => {
       setErr("비밀번호를 입력해주세요");
     } else {
       const response_data = await login(userInfo);
-      console.log(response_data);
       if (response_data.ok) {
         window.sessionStorage.setItem("id", true);
         window.sessionStorage.setItem("username", response_data.username);
-
+        authorized(sessionStorage.getItem("id"));
         onHide();
       } else {
         alert_setShow(true);
         setErr(response_data.error);
       }
-      console.log(response_data);
     }
   };
 

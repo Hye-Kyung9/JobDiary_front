@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=Gowun+Dodum&family=Hahmlet:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800');
 
-
+.stack-img {
+  max-width: 36px;
+  margin: 7px;
+}
 
 ol,
 ul {
@@ -236,9 +239,9 @@ ul {
   }
 
   h1 {
-    font-size: 30pt;
+    font-size: 24pt;
     margin-bottom: 50px;
-
+    /* font-weight: bold; */
   }
 
   .preview_profile ul li {
@@ -534,11 +537,12 @@ ul {
 }
 
 .card-title {
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   padding-left: 7vw;
   font-size: smaller;
   font-weight: 500;
 }
+
 .page-link {
   color: black;
 }
@@ -626,6 +630,36 @@ a:active {
   box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%);
 }
 
+.add-event {
+  position: fixed;
+  right: 50px;
+  bottom: 100px;
+  z-index: 9;
+  font-size: 0.875rem;
+  width: auto;
+  height: 48px;
+  padding: 0 16px;
+  min-width: 48px;
+  min-height: auto;
+  border-radius: 24px;
+}
+
+.add-diary {
+  position: fixed;
+  right: 50px;
+  bottom: 22vh;
+  z-index: 9;
+  font-size: 0.875rem;
+  width: auto;
+  height: 48px;
+  padding: 0 16px;
+  min-width: 48px;
+  min-height: auto;
+  border-radius: 24px;
+  background-color: #53565b;
+}
+
+
 .fc {
   width: 80%;
   margin: 0 auto;
@@ -637,8 +671,55 @@ a:active {
   /* text-align: center; */
   margin: 1.5em;
 }
+
 .btn-primary:hover {
   color: #fff;
   background-color: #3b6fc9;
   border-color: inherit;
+}
+
+.region {
+  margin-bottom: 1rem;
+  padding-left: 7vw;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.image-group {
+  margin-top: 35px;
+
+}
+
+.card:hover {
+  transform: scale(1.01);
+  box-shadow: 1px 1px 20px #ddd;
+  transition: transform .5s;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.stack-card {
+  max-width: 36px;
+  margin: 7px;
+}
+
+.event-modal-form{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 50vw;
+  max-width: 700px;
+  height: 50vh;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  display: flex;
+  border-radius: 10px;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding: 30px;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 30;
+  box-shadow: rgb(0 0 0 / 12%) 0px 3px 6px, rgb(0 0 0 / 24%) 0px 2px 5px;
 }

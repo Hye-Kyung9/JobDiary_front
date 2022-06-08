@@ -5,6 +5,7 @@ import TodoHead from "./TodoHead";
 import TodoLi from "./TodoLi";
 import TodoCreate from "./TodoCreate";
 import { TodoProvider } from "./TodoContext";
+import Footer from "../../../layouts/Footer";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -14,14 +15,17 @@ const GlobalStyle = createGlobalStyle`
 
 function TodoMain() {
   return (
-    <TodoProvider>
-      <GlobalStyle />
-      <TodoTemplate>
-        <TodoHead />
-        <TodoLi />
-        <TodoCreate />
-      </TodoTemplate>
-    </TodoProvider>
+    <>
+      <TodoProvider>
+        <GlobalStyle />
+        <TodoTemplate>
+          <TodoHead />
+          <TodoLi />
+          <TodoCreate />
+        </TodoTemplate>
+      </TodoProvider>
+      <Footer />
+    </>
   );
 }
 

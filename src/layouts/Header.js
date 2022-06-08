@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { Navbar, Nav, Button, Container, NavDropdown } from "react-bootstrap";
 import SignUpModal from "../modals/SignUpModal";
 import SignInModal from "../modals/SignInModal";
@@ -7,11 +8,16 @@ import logo from "./imgs/logo.png";
 const Header = () => {
   const [signUpModalOn, setSignUpModalOn] = useState(false);
   const [signInModalOn, setSignInModalOn] = useState(false);
+  const [authorized, setAuthorized] = useState(sessionStorage.getItem("id"));
 
-  let isAuthorized = sessionStorage.getItem("id");
-  let username = sessionStorage.getItem("username");
+  const logout = async () => {
+    await axios.get("http://localhost:4000/routes/account/logout", {
+      withCredentials: true,
+    });
 
-  console.log(isAuthorized);
+    window.sessionStorage.removeItem("id");
+    setAuthorized(sessionStorage.getItem("id"));
+  };
 
   return (
     <>
@@ -22,6 +28,7 @@ const Header = () => {
       <SignInModal
         show={signInModalOn}
         onHide={() => setSignInModalOn(false)}
+        authorized={setAuthorized}
       />
       <Navbar bg="light" expand="lg" className="header_nav">
         <Container>
@@ -55,48 +62,33 @@ const Header = () => {
             </NavDropdown>
           </Nav>
           <Nav className="ml-auto">
-            {/* <Navbar.Toggle aria-controls="basic-navbar-nav" />  */}
-            {/* <Navbar.Collapse id="basic-navbar-nav"> */}
-            {isAuthorized ? null : (
-              <Nav.Link>
-                <Button variant="dark" onClick={() => setSignInModalOn(true)}>
-                  Sign In
-                </Button>
-              </Nav.Link>
-            )}
-            {isAuthorized ? (
-              ({ username },
-              (
+            {authorized ? (
+              <>
+                {/* {username} */}
                 <Nav.Link>
-                  <Button className="logout">logout</Button>
+                  <Button className="logout" onClick={logout} variant="light">
+                    logout
+                  </Button>
                 </Nav.Link>
-              ))
+              </>
             ) : (
-              <Nav.Link>
-                <Button
-                  variant="light"
-                  className="signup"
-                  onClick={() => setSignUpModalOn(true)}
-                >
-                  Sign Up
-                </Button>
-              </Nav.Link>
+              <>
+                <Nav.Link>
+                  <Button variant="dark" onClick={() => setSignInModalOn(true)}>
+                    Sign In
+                  </Button>
+                </Nav.Link>
+                <Nav.Link>
+                  <Button
+                    variant="light"
+                    className="signup"
+                    onClick={() => setSignUpModalOn(true)}
+                  >
+                    Sign Up
+                  </Button>
+                </Nav.Link>
+              </>
             )}
-            {/* <Nav.Link>
-              <Button variant="dark" onClick={() => setSignInModalOn(true)}>
-                Sign In
-              </Button>
-            </Nav.Link> */}
-            {/* <Nav.Link>
-              <Button
-                variant="light"
-                className="signup"
-                onClick={() => setSignUpModalOn(true)}
-              >
-                Sign Up
-              </Button>
-            </Nav.Link> */}
-            {/* </Navbar.Collapse> */}
           </Nav>
         </Container>
       </Navbar>

@@ -44,6 +44,7 @@ const SignUpModal = ({ show, onHide }) => {
       if (exptext.test(userInfo.email) == true) {
         if (userInfo.password == userInfo.confirm_password) {
           const response_data = await register(userInfo);
+          console.log(response_data);
           if (response_data.ok) {
             alert("회원가입 완료");
             onHide();

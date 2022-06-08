@@ -3,6 +3,7 @@ import PostHeader from "./PostHeader";
 import PostList from "./PostList";
 import { Button } from "react-bootstrap";
 import PaginationPost from "./PaginationPost";
+import Footer from "../../layouts/Footer";
 
 const PostMain = () => {
   const [postsPerPage] = useState(10);
@@ -19,7 +20,7 @@ const PostMain = () => {
         새 글 쓰기
       </Button>
       <PostList />
-      <PaginationPost />{" "}
+      <PaginationPost /> <Footer />
     </>
   );
 };

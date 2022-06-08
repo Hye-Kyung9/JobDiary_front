@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 import Datetime from "react-datetime";
+import { Button } from "react-bootstrap";
 
 export default function ({ isOpen, onClose, onEventAdded }) {
   const [title, setTitle] = useState("");
@@ -20,7 +21,7 @@ export default function ({ isOpen, onClose, onEventAdded }) {
 
   return (
     <Modal isOpen={isOpen} onRequestClose={onClose}>
-      <form onSubmit={onSubmit}>
+      <form className="event-modal-form" onSubmit={onSubmit}>
         <input
           placeholder="title"
           value={title}
