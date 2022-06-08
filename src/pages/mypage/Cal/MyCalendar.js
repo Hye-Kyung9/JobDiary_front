@@ -4,7 +4,6 @@ import { Button } from "react-bootstrap";
 // import interactionPlugin from "@fullcalendar/interaction";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import ViewList from "./ViewList";
-import Modal from "react-modal";
 import AddEventModal from "./AddEventModal";
 import axios from "axios";
 import moment from "moment";
@@ -22,6 +21,11 @@ const MyCalendar = () => {
       title: event.title,
     });
   };
+
+  const eventClick = (data) => {
+    console.log(data);
+  };
+
   async function handleEventAdd(data) {
     await axios.post(
       "http://localhost:4000/api/calendar/create-event",
@@ -30,6 +34,7 @@ const MyCalendar = () => {
   }
 
   async function handleDateSet(data) {
+    console.log(data);
     const response = await axios.get(
       "http://localhost:4000/api/calendar/get-events?start=" +
         moment(data.start).toISOString() +
@@ -55,13 +60,15 @@ const MyCalendar = () => {
           plugins={[dayGridPlugin]}
           initialView="dayGridMonth"
           eventAdd={(event) => handleEventAdd(event)}
-          dateSet={(date) => handleDateSet(date)}
+          datesSet={(date) => handleDateSet(date)}
           dayMaxEvents={true}
           moreLinkClick="popover"
           contentHeight="800px"
           eventDisplay="block"
           eventBackgroundColor="#1864ab"
           selectable={true}
+          selectHelper={true}
+          eventClick={eventClick}
         />
         <AddEventModal
           isOpen={modalOpen}

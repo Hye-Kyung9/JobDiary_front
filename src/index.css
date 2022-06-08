@@ -630,6 +630,18 @@ a:active {
   box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%);
 }
 
+.btn-primary:hover {
+  /* color: #fff; */
+  /* background-color: #3b6fc9; */
+  /* border-color: inherit; */
+  border: none;
+}
+
+.view-list:hover {
+  background-color: #dedede;
+
+}
+
 .add-event {
   position: fixed;
   right: 50px;
@@ -674,8 +686,14 @@ a:active {
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #3b6fc9;
-  border-color: inherit;
+  /* background-color: #3b6fc9; */
+  /* border-color: inherit; */
+  border: none;
+}
+
+.btn:focus {
+  outline: 0;
+  box-shadow: none;
 }
 
 .region {
@@ -703,7 +721,7 @@ a:active {
   margin: 7px;
 }
 
-.event-modal-form{
+.event-modal-form {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -722,4 +740,53 @@ a:active {
   flex-direction: column;
   z-index: 30;
   box-shadow: rgb(0 0 0 / 12%) 0px 3px 6px, rgb(0 0 0 / 24%) 0px 2px 5px;
+}
+
+.event-modal {
+  /* position: absolute; */
+  /* inset: 40px; */
+  /* border: 1px solid rgb(204, 204, 204);
+  background: rgb(255, 255, 255);
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px; */
+}
+
+.btn-primary:focus {
+  color: #fff;
+  background-color: #828282;
+  border-color: #828282;
+  box-shadow: none;}
+
+.btn-primary:active{
+    color: #fff;
+    background-color: #828282;
+    border-color: #fff;
+}
+
+.btn-primary:hover {
+  color: #000;
+  background-color: #e0e0e0;
+  border-color: none;
+}
+
+.btn-primary {
+  border-color: inherit;
+}
+
+.add-event .add-diary{
+  border-color: none;
+}
+
+.add-event-detail{
+  right: 50px;
+  bottom: 100px;
+  z-index: 9;
+  font-size: 0.875rem;
+  width: auto;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 10px;
+  border-style: none;
 }

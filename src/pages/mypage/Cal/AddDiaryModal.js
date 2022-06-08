@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 import Datetime from "react-datetime";
-// import { Button } from "react-bootstrap";
 
-export default function ({ isOpen, onClose, onEventAdded }) {
+export default function ({ isOpen, onClose, onDiaryAdded }) {
   const [title, setTitle] = useState("");
   const [start, setStart] = useState(new Date());
   const [end, setEnd] = useState(new Date());
@@ -11,7 +10,7 @@ export default function ({ isOpen, onClose, onEventAdded }) {
   const onSubmit = (event) => {
     event.preventDefault();
 
-    onEventAdded({
+    onDiaryAdded({
       title,
       start,
       end,
@@ -41,7 +40,7 @@ export default function ({ isOpen, onClose, onEventAdded }) {
             <label>End Date</label>
             <Datetime value={end} onChange={(date) => setEnd(date)} />
           </div>
-          <button className="add-event-detail">Add event</button>
+          <button>Add event</button>
         </form>
       </Modal>
     </>

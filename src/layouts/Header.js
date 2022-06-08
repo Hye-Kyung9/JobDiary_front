@@ -12,7 +12,7 @@ const Header = () => {
 
   const logout = async () => {
     await axios.get("http://localhost:4000/routes/account/logout", {
-      withCredentials: true,
+      withCredentials: false,
     });
 
     window.sessionStorage.removeItem("id");
