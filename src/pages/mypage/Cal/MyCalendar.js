@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import FullCalendar from "@fullcalendar/react";
+import { Button } from "react-bootstrap";
 // import interactionPlugin from "@fullcalendar/interaction";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import ViewList from "./ViewList";
@@ -37,11 +38,17 @@ const MyCalendar = () => {
     );
     setEvents(response.data);
   }
+
   return (
     <>
       <section>
-        <button onClick={() => setModalOpen(true)}>Add Event</button>
-        <div style={{ position: "relative", zIndex: 0 }}></div>
+        <Button className="add-event" onClick={() => setModalOpen(true)}>
+          Add Event
+        </Button>
+        <Button className="add-diary" onClick={() => setModalOpen(true)}>
+          Add Diary
+        </Button>
+        {/* <div style={{ position: "relative", zIndex: 0 }}></div> */}
         <FullCalendar
           events={events}
           ref={calendarRef}
