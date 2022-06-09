@@ -36,7 +36,8 @@ const WriteResume = () => {
   };
 
   //값을 가져오기 위해 inputs에 name으로 가져왔다
-  const { name, email, address, phone, profile, skill, skill_detail } = inputs;
+  const { file, name, email, address, phone, profile, skill, skill_detail } =
+    inputs;
 
   const onChange = (e) => {
     //input에 name을 가진 요소의 value에 이벤트를 걸었다
@@ -52,6 +53,23 @@ const WriteResume = () => {
     setInputs(nextInputs);
   };
 
+  //이미지 업로드
+  const [imageSrc, setImageSrc] = useState({ file: "" });
+
+  const encodeFileToBase64 = (fileBlob) => {
+    const reader = new FileReader();
+
+    reader.readAsDataURL(fileBlob);
+
+    return new Promise((resolve) => {
+      reader.onload = () => {
+        setImageSrc(reader.result);
+
+        resolve();
+      };
+    });
+  };
+
   return (
     <>
       <div className="write_resume">
@@ -64,9 +82,23 @@ const WriteResume = () => {
             이름과 주소 연락처 등과 같은 인적사항을 입력해주세요
           </div>
           <div className="userinfo_container">
+            <input
+              id="file"
+              className="img-upload"
+              type="file"
+              onChange={(e) => {
+                encodeFileToBase64(e.target.files[0]);
+              }}
+              style={{ display: "none" }}
+              value={file}
+            />
             <div className="imgUpload">
-              <button className="imgUpload_btn"></button>
-              <button className="sub_imgUpload_btn">사진 업로드</button>
+              <label for="file" className="sub_imgUpload_btn">
+                사진 업로드
+              </label>
+              {/* {imageSrc && (
+                <img src={imageSrc} alt="preview-img" className="preview-img" />
+              )} */}
             </div>
             <br />
             <div className="userinfo_form_item">
@@ -156,6 +188,15 @@ const WriteResume = () => {
 const RightPreview = (props) => {
   return (
     <>
+      <div className="preview_name">
+        {props.userInfo.imageSrc && (
+          <img
+            src={props.userInfo.imageSrc}
+            alt="preview-img"
+            className="preview-img"
+          />
+        )}
+      </div>
       <div className="preview_name">
         <h1>{props.userInfo.name}</h1>
       </div>

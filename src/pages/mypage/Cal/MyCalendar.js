@@ -5,13 +5,24 @@ import { Button } from "react-bootstrap";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import ViewList from "./ViewList";
 import AddEventModal from "./AddEventModal";
+import AddDiaryModal from "./AddDiaryModal";
 import axios from "axios";
 import moment from "moment";
 
 const MyCalendar = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [events, setEvents] = useState([]);
+  const [diaryOpen, setDiaryOpen] = useState(false);
   const calendarRef = useRef(null);
+
+  const onDiaryAdded = (diary) => {
+    let calendarApi = calendarRef.current.getApi();
+    calendarApi.addDiary({
+      start: moment(diary.start).toDate(),
+      content: diary.content,
+      title: diary.title,
+    });
+  };
 
   const onEventAdded = (event) => {
     let calendarApi = calendarRef.current.getApi();
@@ -50,7 +61,7 @@ const MyCalendar = () => {
         <Button className="add-event" onClick={() => setModalOpen(true)}>
           Add Event
         </Button>
-        <Button className="add-diary" onClick={() => setModalOpen(true)}>
+        <Button className="add-diary" onClick={() => setDiaryOpen(true)}>
           Add Diary
         </Button>
         {/* <div style={{ position: "relative", zIndex: 0 }}></div> */}
@@ -75,6 +86,12 @@ const MyCalendar = () => {
           onClose={() => setModalOpen(false)}
           onEventAdded={(event) => onEventAdded(event)}
         />
+        <AddDiaryModal
+          isOpen={diaryOpen}
+          onClose={() => setDiaryOpen(false)}
+          onEventAdded={(event) => onDiaryAdded(event)}
+        />
+
         <ViewList />
       </section>
     </>

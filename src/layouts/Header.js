@@ -45,10 +45,10 @@ const Header = () => {
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/my_resume">내 이력서</NavDropdown.Item>
-              <NavDropdown.Divider />
+              {/* <NavDropdown.Divider />
               <NavDropdown.Item href="/good_resume">
                 우수 이력서
-              </NavDropdown.Item>
+              </NavDropdown.Item> */}
             </NavDropdown>
             <NavDropdown title="mypage">
               {/* <NavDropdown.Item href="/daybook">일일 일기</NavDropdown.Item> */}

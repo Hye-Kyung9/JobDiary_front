@@ -26,6 +26,7 @@ export default function ({ isOpen, onClose, onEventAdded }) {
         isOpen={isOpen}
         onRequestClose={onClose}
         style={{ overlay: { position: "absolute", inset: "auto" } }}
+        ariaHideApp={false}
       >
         <form className="event-modal-form" onSubmit={onSubmit}>
           <input

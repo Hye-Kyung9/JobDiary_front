@@ -4,16 +4,16 @@ import Datetime from "react-datetime";
 
 export default function ({ isOpen, onClose, onDiaryAdded }) {
   const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
   const [start, setStart] = useState(new Date());
-  const [end, setEnd] = useState(new Date());
 
   const onSubmit = (event) => {
     event.preventDefault();
 
     onDiaryAdded({
       title,
+      content,
       start,
-      end,
     });
     onClose();
   };
@@ -25,22 +25,26 @@ export default function ({ isOpen, onClose, onDiaryAdded }) {
         isOpen={isOpen}
         onRequestClose={onClose}
         style={{ overlay: { position: "absolute", inset: "auto" } }}
+        ariaHideApp={false}
       >
-        <form className="event-modal-form" onSubmit={onSubmit}>
+        <form className="diary-modal-form" onSubmit={onSubmit}>
           <input
             placeholder="title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
+            style={{ border: "inset" }}
+          />
+          <textarea
+            placeholder="content"
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+            style={{ border: "inset", height: "100px" }}
           />
           <div>
-            <label>Start Date</label>
+            <label>Date</label>
             <Datetime value={start} onChange={(date) => setStart(date)} />
           </div>
-          <div>
-            <label>End Date</label>
-            <Datetime value={end} onChange={(date) => setEnd(date)} />
-          </div>
-          <button>Add event</button>
+          <button className="add-event-detail">Add Diary</button>
         </form>
       </Modal>
     </>
