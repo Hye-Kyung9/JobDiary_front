@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import Datetime from "react-datetime";
 
-export default function ({ isOpen, onClose, onDiaryAdded }) {
+export default function ({ isOpen, onClose, onEventAdded }) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [start, setStart] = useState(new Date());
@@ -10,7 +10,7 @@ export default function ({ isOpen, onClose, onDiaryAdded }) {
   const onSubmit = (event) => {
     event.preventDefault();
 
-    onDiaryAdded({
+    onEventAdded({
       title,
       content,
       start,

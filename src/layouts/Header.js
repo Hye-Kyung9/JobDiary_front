@@ -38,7 +38,7 @@ const Header = () => {
           <Nav className="me-auto">
             <Nav.Link href="/jobs">채용정보</Nav.Link>
             <Nav.Link href="/stack">기업별스택</Nav.Link>
-            <Nav.Link href="/study">Study With Me</Nav.Link>
+            <Nav.Link href="/study">취준진담</Nav.Link>
             <NavDropdown title="이력서">
               <NavDropdown.Item href="/template">
                 이력서 작성하기

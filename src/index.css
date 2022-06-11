@@ -438,12 +438,13 @@ ul {
   position: absolute;
   top: 30%;
   left: 50%;
+  background-color: gainsboro;
   transform: translate(-50%, -50%);
   /* //텍스트 정가운데 고정 */
 }
 
 .study_with_me::before {
-  content: "Study With Me";
+  content: "취업 고민 상담 🤔";
   position: absolute;
   top: 0;
   left: 0;
@@ -452,13 +453,11 @@ ul {
   color: #53565b;
   overflow: hidden;
   border-right: 3px solid black;
+
   /* 커서역할 */
-  animation: typing 2.7s steps(12);
+  animation: typing 2.0s steps(8);
 }
 
-.study_head {
-  /* position: relative; */
-}
 
 @keyframes typing {
   0% {
@@ -817,7 +816,7 @@ a:active {
 
 .preview-img {
   width: 95px;
-  height: 114px;
+  height: 120px;
   margin-left: 20px;
 }
 
@@ -832,4 +831,92 @@ a:active {
 
 .form-control:focus {
   box-shadow: none;
+}
+
+#chooseFile {
+  visibility: hidden;
+}
+
+.loading {
+  position: relative;
+  width: 96px;
+  height: 50vh;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.dot div {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+  margin: auto;
+  border-radius: 10px;
+  background-color: rgb(105, 105, 105);
+  transform: scale(0);
+  animation: dot 1.5s linear infinite;
+}
+
+.dot div:nth-child(1) {
+  left: -50px;
+  animation-delay: -0.1s;
+}
+
+.dot div:nth-child(3) {
+  right: -50px;
+  animation-delay: 0.1s;
+}
+
+@keyframes dot {
+  0% {
+    transform: scale(0);
+  }
+
+  35% {
+    transform: scale(1);
+  }
+
+  70% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+.JobGroup__title {
+  padding-top: 3px;
+  margin-right: 15.5px;
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+  line-height: 72px;
+
+}
+
+.JobCategoryOverlay {
+  padding: 20px 100px 20px 150px;
+}
+
+.JobCategoryItem{
+  margin: 0 10px 10px 0;
+  padding: 3px 16px;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: -0.5px;
+  border-radius: 20px;
+  border: 1px solid rgb(228, 228, 228);
+  /* color: rgb(68, 68, 68); */
+      background: white;
+
+}
+
+.JobCategoryItem:hover{
+  background-color: #f4f4f4;
+  /* border: 1px solid #36f;
+  color: #36f; */
 }

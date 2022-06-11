@@ -83,22 +83,28 @@ const WriteResume = () => {
           </div>
           <div className="userinfo_container">
             <input
-              id="file"
+              id="chooseFile"
               className="img-upload"
               type="file"
               onChange={(e) => {
                 encodeFileToBase64(e.target.files[0]);
               }}
+              name="chooseFile"
               style={{ display: "none" }}
               value={file}
             />
             <div className="imgUpload">
-              <label for="file" className="sub_imgUpload_btn">
+              <label for="chooseFile" className="sub_imgUpload_btn">
                 사진 업로드
               </label>
-              {/* {imageSrc && (
-                <img src={imageSrc} alt="preview-img" className="preview-img" />
-              )} */}
+              {imageSrc && (
+                <img
+                  src={imageSrc}
+                  alt=""
+                  className="preview-img"
+                  // style={{ visibility: "hidden" }}
+                />
+              )}
             </div>
             <br />
             <div className="userinfo_form_item">
@@ -188,15 +194,6 @@ const WriteResume = () => {
 const RightPreview = (props) => {
   return (
     <>
-      <div className="preview_name">
-        {props.userInfo.imageSrc && (
-          <img
-            src={props.userInfo.imageSrc}
-            alt="preview-img"
-            className="preview-img"
-          />
-        )}
-      </div>
       <div className="preview_name">
         <h1>{props.userInfo.name}</h1>
       </div>
