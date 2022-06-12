@@ -37,9 +37,9 @@ const SelectPosition = () => {
             <button type="button" class="JobCategoryItem">
               데이터 엔지니어
             </button>
-            <button type="button" class="JobCategoryItem">
+            {/* <button type="button" class="JobCategoryItem">
               Node.js 개발자
-            </button>
+            </button> */}
             <button type="button" class="JobCategoryItem">
               C,C++ 개발자
             </button>

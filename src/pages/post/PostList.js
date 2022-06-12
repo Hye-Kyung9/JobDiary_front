@@ -31,7 +31,7 @@ const PostList = (props) => {
         <CommonTableRow>
           <CommonTableColumn>4</CommonTableColumn>
           <CommonTableColumn>
-            스타트업에서 커리어 시작해도 괜찮을까요? 🤔
+            스타트업에서 커리어 시작해도 괜찮을까요?
           </CommonTableColumn>
           <CommonTableColumn>2022-06-10</CommonTableColumn>
           <CommonTableColumn>2</CommonTableColumn>

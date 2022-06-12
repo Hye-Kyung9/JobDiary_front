@@ -97,14 +97,14 @@ const WriteResume = () => {
               <label for="chooseFile" className="sub_imgUpload_btn">
                 사진 업로드
               </label>
-              {imageSrc && (
+              {/* {imageSrc && (
                 <img
                   src={imageSrc}
                   alt=""
                   className="preview-img"
                   // style={{ visibility: "hidden" }}
                 />
-              )}
+              )} */}
             </div>
             <br />
             <div className="userinfo_form_item">
@@ -186,7 +186,7 @@ const WriteResume = () => {
           <RightPreview userInfo={inputs} />
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
