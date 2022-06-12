@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Navbar, Nav, Button, Container, NavDropdown } from "react-bootstrap";
 import SignUpModal from "../modals/SignUpModal";
@@ -6,17 +7,20 @@ import SignInModal from "../modals/SignInModal";
 import logo from "./imgs/logo.png";
 
 const Header = () => {
+  const navigate = useNavigate();
   const [signUpModalOn, setSignUpModalOn] = useState(false);
   const [signInModalOn, setSignInModalOn] = useState(false);
   const [authorized, setAuthorized] = useState(sessionStorage.getItem("id"));
 
   const logout = async () => {
     await axios.get("http://localhost:4000/routes/account/logout", {
-      withCredentials: false,
+      withCredentials: true,
     });
 
     window.sessionStorage.removeItem("id");
+    window.sessionStorage.removeItem("username");
     setAuthorized(sessionStorage.getItem("id"));
+    navigate("/");
   };
 
   return (

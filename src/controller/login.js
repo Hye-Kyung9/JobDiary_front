@@ -7,7 +7,8 @@ export const login = async ({ email, password }) => {
       {
         email: email,
         password: password,
-      }
+      },
+      { withCredentials: true }
     );
     return response.data;
   } catch (err) {

@@ -4,7 +4,6 @@ import "./bootstrap.min.css";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-// import useNavigate from "react-router";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./NotFound";
 import PostMain from "./pages/post/PostMain";
@@ -17,30 +16,115 @@ import MyCalendar from "./pages/mypage/Cal/MyCalendar";
 import Skills from "./pages/stack/Skills";
 import NewPost from "./pages/post/NewPost";
 import JobPosting from "./pages/jobposting/JobPosting";
+import { RequireAuth } from "./RequireAuth";
 import "react-datetime/css/react-datetime.css";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<App />}></Route>
-        <Route path="/jobs" element={<JobPosting />}></Route>
-        <Route path="/stack" element={<Skills />}></Route>
-        <Route path="/study" element={<PostMain />}></Route>
-        <Route path="/interview" element={<NotFound />}></Route>
-        <Route path="/it-mbti" element={<NotFound />}></Route>
-        <Route path="/template" element={<Template />}></Route>
-        <Route path="/template/write_resume" element={<WriteResume />}></Route>
-        <Route path="/my_resume" element={<NotFound />}></Route>
-        <Route path="/new_post" element={<NewPost />}></Route>
-        <Route path="/good_resume" element={<NotFound />}></Route>
-        <Route path="/todolist" element={<Todo />}></Route>
-        <Route path="/calendar" element={<MyCalendar />}></Route>
-      </Routes>
-      {/* <Footer /> */}
-    </BrowserRouter>
-  </React.StrictMode>,
+  // <React.StrictMode>
+  <BrowserRouter>
+    <Header />
+    <Routes>
+      <Route path="/" element={<App />}></Route>
+      <Route
+        path="/jobs"
+        element={
+          <RequireAuth>
+            <JobPosting />
+          </RequireAuth>
+        }
+      ></Route>
+      <Route
+        path="/stack"
+        element={
+          <RequireAuth>
+            <Skills />
+          </RequireAuth>
+        }
+      ></Route>
+      <Route
+        path="/study"
+        element={
+          <RequireAuth>
+            <PostMain />
+          </RequireAuth>
+        }
+      ></Route>
+      <Route
+        path="/interview"
+        element={
+          <RequireAuth>
+            <NotFound />
+          </RequireAuth>
+        }
+      ></Route>
+      <Route
+        path="/it-mbti"
+        element={
+          <RequireAuth>
+            <NotFound />
+          </RequireAuth>
+        }
+      ></Route>
+      <Route
+        path="/template"
+        element={
+          <RequireAuth>
+            <Template />
+          </RequireAuth>
+        }
+      ></Route>
+      <Route
+        path="/template/write_resume"
+        element={
+          <RequireAuth>
+            <WriteResume />
+          </RequireAuth>
+        }
+      ></Route>
+      <Route
+        path="/my_resume"
+        element={
+          <RequireAuth>
+            <NotFound />
+          </RequireAuth>
+        }
+      ></Route>
+      <Route
+        path="/new_post"
+        element={
+          <RequireAuth>
+            <NewPost />
+          </RequireAuth>
+        }
+      ></Route>
+      <Route
+        path="/good_resume"
+        element={
+          <RequireAuth>
+            <NotFound />
+          </RequireAuth>
+        }
+      ></Route>
+      <Route
+        path="/todolist"
+        element={
+          <RequireAuth>
+            <Todo />
+          </RequireAuth>
+        }
+      ></Route>
+      <Route
+        path="/calendar"
+        element={
+          <RequireAuth>
+            <MyCalendar />
+          </RequireAuth>
+        }
+      ></Route>
+    </Routes>
+    {/* <Footer /> */}
+  </BrowserRouter>,
+  // </React.StrictMode>,
   document.getElementById("root")
 );
 

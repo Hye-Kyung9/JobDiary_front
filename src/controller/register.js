@@ -9,7 +9,7 @@ export const register = async ({ username, email, password }) => {
         email: email,
         password: password,
       },
-      { withCredentials: false }
+      { withCredentials: true }
     );
     return response.data;
   } catch (err) {
