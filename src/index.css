@@ -204,9 +204,9 @@ ul {
 }
 
 .template_list_img:hover {
-  transform: scale(1.02);
+  /* transform: scale(1.02);
   transition: transform .5s;
-  overflow: hidden;
+  overflow: hidden; */
 }
 
 .write_resume {
@@ -588,7 +588,6 @@ ul {
   max-width: 72px;
   border-radius: 40%;
 }
-
 .card {
   padding: 30px;
   display: inline-block;
@@ -720,6 +719,12 @@ a:active {
 .stack-card {
   max-width: 36px;
   margin: 7px;
+  border-radius: 4px;
+}
+.stack-card:hover{
+  transform: scale(1.08);
+  transition: transform .5s;
+  overflow: hidden;
 }
 
 .event-modal-form {
@@ -919,4 +924,62 @@ a:active {
   background-color: #f4f4f4;
   /* border: 1px solid #36f;
   color: #36f; */
+}
+
+.modal-container {
+  /* 모달창 크기 */
+  width: 300px;
+  height: 200px;
+
+  /* 최상단 위치 */
+  z-index: 999;
+  
+  /* 중앙 배치 */
+  /* top, bottom, left, right 는 브라우저 기준으로 작동한다. */
+  /* translate는 본인의 크기 기준으로 작동한다. */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* 모달창 디자인 */
+  background-color: gray;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+/* 모달창 내부 X버튼 */
+.modal-container .close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.stack-modal-header{
+  display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem 1rem;
+    border-bottom: none;
+    border-top-left-radius: calc(0.3rem - 1px);
+    border-top-right-radius: calc(0.3rem - 1px);
+    font-weight: 500;
+}
+
+.stack-modal-body{
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.stack-name{
+  font-size: 12px;
+  text-align: center;
+  font-family: "Pretendard Variable";
+}
+.stack-block{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-right: 10px;
 }

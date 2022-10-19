@@ -1,18 +1,177 @@
-import React from "react";
-import { Row, Col, Card } from "react-bootstrap";
+// import { set } from "mongoose";
+import React, { useState } from "react";
+import { Row, Col, Card, Modal, Container, Button } from "react-bootstrap";
 
 const StackBody = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const ModalCard = () => {
+    return (
+      <>
+        <Modal
+          show={show}
+          onHide={handleClose}
+          backdrop="static"
+          keyboard={false}
+        >
+          <Container>
+            <Row>
+              <Col xs={3}>
+                <div
+                  className="stack-modal-header stack-block"
+                  style={{ marginTop: "30px", color: "darkslategrey" }}
+                >
+                  <span>
+                    <img
+                      align="left"
+                      src="https://static.codenary.co.kr/company-logo/1246.png"
+                      alt=""
+                      className="logo_img"
+                      style={{ marginLeft: "10px", marginRight: "10px" }}
+                    />
+                  </span>
+                  <span
+                    className="stack-name"
+                    style={{
+                      fontSize: "15px",
+                      fontWeight: "500",
+                      fontFamily: "Pretendard Variable",
+                    }}
+                  >
+                    네이버
+                  </span>
+                </div>
+              </Col>
+              <Col>
+                <Row style={{ marginLeft: "20px", marginTop: "20px" }}>
+                  <span style={{ fontSize: "15px", fontWeight: "500" }}>
+                    언어
+                  </span>{" "}
+                  <br />
+                  <span style={{ fontSize: "12px", color: "#909090" }}>
+                    * 총 9개의 기술 스택
+                  </span>
+                </Row>
+                <div className="stack-modal-body">
+                  <div className="stack-block">
+                    <span>
+                      <img
+                        src="https://static.codenary.co.kr/framework_logo/javascript.png"
+                        alt=""
+                        className="stack-card"
+                      />
+                    </span>
+                    <span className="stack-name">Javascript</span>
+                  </div>
+                  <div className="stack-block">
+                    <span>
+                      <img
+                        src="https://static.codenary.co.kr/framework_logo/kotlin.png"
+                        className="stack-card"
+                        alt=""
+                      />
+                    </span>
+                    <span className="stack-name">Kotlin</span>
+                  </div>
+                  <div className="stack-block">
+                    <span>
+                      <img
+                        src="https://static.codenary.co.kr/framework_logo/java.png"
+                        className="stack-card"
+                        alt=""
+                      />
+                    </span>
+                    <span className="stack-name">Java</span>
+                  </div>
+                  <div className="stack-block">
+                    <span>
+                      <img
+                        src="https://static.codenary.co.kr/framework_logo/typescript.png"
+                        className="stack-card"
+                        alt=""
+                      />
+                    </span>
+                    <span className="stack-name">Typescript</span>
+                  </div>
+                  <div className="stack-block">
+                    <span>
+                      <img
+                        src="https://static.codenary.co.kr/framework_logo/go.png"
+                        className="stack-card"
+                        alt=""
+                      />
+                    </span>
+                    <span className="stack-name">Go</span>
+                  </div>
+                  <div className="stack-block">
+                    <span>
+                      <img
+                        src="https://static.codenary.co.kr/framework_logo/python.png"
+                        className="stack-card"
+                        alt=""
+                      />
+                    </span>
+                    <span className="stack-name">Python</span>
+                  </div>
+                  <div className="stack-block">
+                    <span>
+                      <img
+                        src="https://static.codenary.co.kr/framework_logo/scala.png"
+                        className="stack-card"
+                        alt=""
+                      />
+                    </span>
+                    <span className="stack-name">Scala</span>
+                  </div>
+                  <div className="stack-block">
+                    <span>
+                      <img
+                        src="https://static.codenary.co.kr/framework_logo/cplusplus.png"
+                        className="stack-card"
+                        alt=""
+                      />
+                    </span>
+                    <span className="stack-name">C++</span>
+                  </div>
+                  <div className="stack-block">
+                    <span>
+                      <img
+                        src="https://static.codenary.co.kr/framework_logo/swift.png"
+                        className="stack-card"
+                        alt=""
+                      />
+                    </span>
+                    <span className="stack-name">Swift</span>
+                  </div>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </>
+    );
+  };
   return (
     <div>
       <Row xs={1} md={2} className="g-4">
         {/* {Array.from({ length: 9 }).map((_, idx) => ( */}
+        <ModalCard />
         <Col>
-          <Card>
+          <Card onClick={handleShow}>
             <img
               align="left"
-              src="https://static.codenary.co.kr/company_logo/1.png"
+              src="https://static.codenary.co.kr/company-logo/1246.png"
               alt=""
               className="logo_img"
+              style={{ marginLeft: "10px" }}
             />
             <Card.Body>
               <Card.Title>네이버</Card.Title>
@@ -76,10 +235,11 @@ const StackBody = () => {
         <Col>
           <Card>
             <img
-              src="https://static.codenary.co.kr/company_logo/2.png"
+              src="https://static.codenary.co.kr/company-logo/1376.png"
               alt=""
               className="logo_img"
               align="left"
+              style={{ marginLeft: "10px" }}
             ></img>{" "}
             <Card.Body>
               <Card.Title>카카오</Card.Title>
@@ -142,10 +302,11 @@ const StackBody = () => {
         <Col>
           <Card>
             <img
-              src="https://static.codenary.co.kr/company_logo/3.png"
+              src="https://static.codenary.co.kr/company-logo/324.png"
               alt=""
               className="logo_img"
               align="left"
+              style={{ marginLeft: "10px" }}
             ></img>
             {/* <Card.Img variant="top" src="holder.js/100px160" alt=""
                 /> */}
@@ -211,9 +372,10 @@ const StackBody = () => {
         <Col>
           <Card>
             <img
-              src="https://static.codenary.co.kr/company_logo/4.png"
+              src="https://static.codenary.co.kr/company-logo/53.png"
               alt=""
               align="left"
+              style={{ marginLeft: "10px" }}
               className="logo_img"
             ></img>
             <Card.Body>
@@ -278,7 +440,8 @@ const StackBody = () => {
           <Card>
             <img
               align="left"
-              src="https://static.codenary.co.kr/company_logo/5.png"
+              style={{ marginLeft: "10px" }}
+              src="https://static.codenary.co.kr/company-logo/102.png"
               alt=""
               className="logo_img"
             ></img>
@@ -343,9 +506,10 @@ const StackBody = () => {
         <Col>
           <Card>
             <img
-              src="https://static.codenary.co.kr/company_logo/6.png"
+              src="https://static.codenary.co.kr/company-logo/2826.png"
               alt=""
               align="left"
+              style={{ marginLeft: "10px" }}
               className="logo_img"
             ></img>
             <Card.Body>
@@ -409,9 +573,10 @@ const StackBody = () => {
         <Col>
           <Card>
             <img
-              src="https://static.codenary.co.kr/company_logo/7.png"
+              src="https://static.codenary.co.kr/company-logo/113.png"
               alt=""
               align="left"
+              style={{ marginLeft: "10px" }}
               className="logo_img"
             ></img>
             <Card.Body>
@@ -476,75 +641,10 @@ const StackBody = () => {
         <Col>
           <Card>
             <img
-              align="left"
-              src="https://static.codenary.co.kr/company_logo/8.png"
-              alt=""
-              className="logo_img"
-            ></img>
-            <Card.Body>
-              <Card.Title>직방</Card.Title>
-              <div className="region">서울특별시 서초구</div>
-              <div className="image-group">
-                <img
-                  src="https://static.codenary.co.kr/framework_logo/nodejs.png"
-                  alt=""
-                  className="stack-card"
-                />
-                <img
-                  src="https://static.codenary.co.kr/framework_logo/expressjs.png"
-                  alt=""
-                  className="stack-card"
-                />
-                <img
-                  src="https://static.codenary.co.kr/framework_logo/nestjs.png"
-                  alt=""
-                  className="stack-card"
-                />
-                <img
-                  src="https://static.codenary.co.kr/framework_logo/nextjs.png"
-                  alt=""
-                  className="stack-card"
-                />
-                <img
-                  src="https://static.codenary.co.kr/framework_logo/reactnative.png"
-                  alt=""
-                  className="stack-card"
-                />
-                <img
-                  src="https://static.codenary.co.kr/framework_logo/github.png"
-                  alt=""
-                  className="stack-card"
-                />
-                <img
-                  src="https://static.codenary.co.kr/framework_logo/azuredevops.png"
-                  alt=""
-                  className="stack-card"
-                />
-                <img
-                  src="https://static.codenary.co.kr/framework_logo/reactjs.png"
-                  alt=""
-                  className="stack-card"
-                />
-                <img
-                  src="https://static.codenary.co.kr/framework_logo/mysql.png"
-                  alt=""
-                  className="stack-card"
-                />
-                <img
-                  src="https://static.codenary.co.kr/framework_logo/hadoop.png"
-                  alt=""
-                  className="stack-card"
-                />
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col>
-          <Card>
-            <img
-              src="https://static.codenary.co.kr/company_logo/9.png"
+              src="https://static.codenary.co.kr/company-logo/4924.png"
               alt=""
               align="left"
+              style={{ marginLeft: "10px" }}
               className="logo_img"
             ></img>
             <Card.Body>
@@ -611,6 +711,7 @@ const StackBody = () => {
               src="https://static.codenary.co.kr/company_logo/10.png"
               alt=""
               align="left"
+              style={{ marginLeft: "10px" }}
               className="logo_img"
             ></img>
             <Card.Body>
@@ -623,9 +724,10 @@ const StackBody = () => {
         <Col>
           <Card>
             <img
-              src="https://static.codenary.co.kr/company_logo/11.png"
+              src="https://static.codenary.co.kr/company-logo/1529.png"
               alt=""
               align="left"
+              style={{ marginLeft: "10px" }}
               className="logo_img"
             ></img>
             <Card.Body>
@@ -686,22 +788,73 @@ const StackBody = () => {
             </Card.Body>
           </Card>
         </Col>
-        {/* <Col>
+        <Col>
           <Card>
             <img
-              src="https://static.codenary.co.kr/company_logo/12.png"
-              align="left"
+              src="https://static.codenary.co.kr/company-logo/593.png"
               alt=""
+              align="left"
+              style={{ marginLeft: "10px" }}
               className="logo_img"
             ></img>
             <Card.Body>
               <Card.Title>카카오뱅크</Card.Title>
               <div className="region">경기도 성남시</div>
-              <div className="image-group"></div>
+              <div className="image-group">
+                <img
+                  src="https://static.codenary.co.kr/framework_logo/reactivex.png"
+                  alt=""
+                  className="stack-card"
+                />
+                <img
+                  src="https://static.codenary.co.kr/framework_logo/spring.png"
+                  alt=""
+                  className="stack-card"
+                />
+                <img
+                  src="https://static.codenary.co.kr/framework_logo/mysql.png"
+                  alt="mysql"
+                  className="stack-card"
+                />
+                <img
+                  src="https://static.codenary.co.kr/framework_logo/reactjs.png"
+                  alt=""
+                  className="stack-card"
+                />
+                <img
+                  src="https://static.codenary.co.kr/framework_logo/vuejs.png"
+                  alt=""
+                  className="stack-card"
+                />
+                <img
+                  src="https://static.codenary.co.kr/framework_logo/jenkins.png"
+                  alt=""
+                  className="stack-card"
+                />
+                <img
+                  src="https://static.codenary.co.kr/framework_logo/docker.png"
+                  alt=""
+                  className="stack-card"
+                />
+                <img
+                  src="https://static.codenary.co.kr/framework_logo/kubernetes.png"
+                  alt=""
+                  className="stack-card"
+                />
+                <img
+                  src="https://static.codenary.co.kr/framework_logo/redis.png"
+                  alt=""
+                  className="stack-card"
+                />
+                <img
+                  src="https://static.codenary.co.kr/framework_logo/memcached.png"
+                  alt=""
+                  className="stack-card"
+                />
+              </div>
             </Card.Body>
           </Card>
-        </Col> */}
-        {/* ))} */}
+        </Col>
       </Row>
     </div>
   );
