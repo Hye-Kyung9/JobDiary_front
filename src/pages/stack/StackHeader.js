@@ -11,7 +11,7 @@ const StackHeader = () => {
           Submit
         </Button>
         <div className="vr" />
-        <Button variant="outline-danger" style={{ width: "6vw" }}>
+        <Button variant="outline-danger" style={{ width: "12%" }}>
           + 기업
         </Button>
       </Stack>

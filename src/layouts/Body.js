@@ -10,11 +10,18 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import "../index.css";
+import { Navigate } from "react-router-dom";
 
 // import required modules
 import { Parallax, Pagination, Navigation } from "swiper";
 
 export default function Body() {
+  const Preparing = () => {
+    // if (!auth) {
+    alert("준비중입니다");
+    return <Navigate to="/" />;
+    // }
+  };
   return (
     <>
       <Swiper
@@ -45,7 +52,11 @@ export default function Body() {
             채용 정보 추천
           </div>
           <div className="detail_btn" data-swiper-parallax="-200">
-            <Button variant="outline-light" href="/my_resume">
+            <Button
+              variant="outline-light"
+              // href="/my_resume"
+              onClick={() => Preparing()}
+            >
               자세히 보기
             </Button>
           </div>

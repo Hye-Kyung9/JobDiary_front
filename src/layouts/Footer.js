@@ -11,7 +11,8 @@ const Footer = () => {
             width: "100%",
             // height: "99999px" /* footer의 높이 */,
             position: "absolute",
-            paddingTop: "10vh",
+            // paddingTop: "10vh",
+            bottom: "0",
             left: "0",
           }}
         >
