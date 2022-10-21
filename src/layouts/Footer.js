@@ -10,8 +10,8 @@ const Footer = () => {
             textAlign: "center",
             width: "100%",
             // height: "99999px" /* footer의 높이 */,
-            position: "absolute",
-            // paddingTop: "10vh",
+            // position: "fixed",
+            paddingTop: "10%",
             bottom: "0",
             left: "0",
           }}

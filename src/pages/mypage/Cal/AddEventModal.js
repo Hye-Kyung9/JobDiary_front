@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 import Datetime from "react-datetime";
+import Footer from "../../../layouts/Footer";
 // import { Button } from "react-bootstrap";
 
 export default function ({ isOpen, onClose, onEventAdded }) {
@@ -45,6 +46,7 @@ export default function ({ isOpen, onClose, onEventAdded }) {
           <button className="add-event-detail">Add event</button>
         </form>
       </Modal>
+      <Footer />
     </>
   );
 }
