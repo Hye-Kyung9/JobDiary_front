@@ -165,7 +165,15 @@ const WriteResume = () => {
           </div>
           {/* 기술추가 */}
           <div className="Write_skills">
-            <div className="Write_skills_title">기술</div>
+            <div
+              className="Write_skills_title"
+              id="skill"
+              name="skill"
+              onChange={onChange}
+              value={skill}
+            >
+              기술
+            </div>
             <div className="Write_skills_subtitle">
               기술명과 해당 기술에 대한 상세 설명을 기재해주세요 :)
             </div>

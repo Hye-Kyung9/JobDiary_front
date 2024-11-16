@@ -28,6 +28,7 @@ const NewPost = () => {
     setContentInfo(value);
     console.log(contentInfo);
   };
+
   const submitPost = async () => {
     await axios.post(
       "http://localhost:4000/routes/board/write",

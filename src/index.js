@@ -108,9 +108,7 @@ ReactDOM.render(
       <Route
         path="/todolist"
         element={
-          <RequireAuth>
             <Todo />
-          </RequireAuth>
         }
       ></Route>
       <Route

@@ -13,7 +13,8 @@ const PostMain = () => {
         새 글 쓰기
       </Button>
       <PostList />
-      <PaginationPost /> <Footer />
+      <PaginationPost />
+      <Footer />
     </>
   );
 };
