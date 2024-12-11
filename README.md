@@ -14,7 +14,10 @@ IT 취업 준비생들을 위한 구인구직 플랫폼(Web)
 * 많은 취업플랫폼이 있지만 사이트 내에서 이력서 작성 외에 사용자가 활용할 수 있는 부분이 적습니다. 사용자가 채용정보 확인뿐 아니라 자신의 목표를 설정할 수 있고, 준비과정을 일기로 기록하면서 자기개발에 도움을 줄 수 있습니다.
 
 ## DB 스키마
-### Tables
+<details><summary>Tables</summary>
+![image](https://github.com/user-attachments/assets/7b40104c-8058-4cb1-9778-4870103dbd75)
+
+</details>
 
 #### 1. UserInfo
 - 회원가입 및 로그인 정보를 저장
