@@ -3,7 +3,6 @@ import { Modal, Button, Form, Container } from "react-bootstrap";
 import { GoogleLogin } from "react-google-login";
 import HorizontalLine from "../components/HorizonLine";
 import { register } from "../controller/register";
-import Icon from "./icon";
 
 const SignUpModal = ({ show, onHide }) => {
   const [alert_show, alert_setShow] = useState(false);
@@ -153,7 +152,6 @@ const SignUpModal = ({ show, onHide }) => {
                     <Button
                       onClick={renderProps.onClick}
                       disabled={renderProps.disabled}
-                      startIcon={<Icon />}
                       variant="contained"
                       style={{
                         backgroundColor: "#176BEF",

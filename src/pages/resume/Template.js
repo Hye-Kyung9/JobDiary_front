@@ -1,5 +1,5 @@
 import React from "react";
-import resume_sample from "../resume_sample1.png";
+import resume_sample from "../../assets/img/resume_sample1.png";
 import Footer from "../../layouts/Footer";
 import { Container } from "react-bootstrap";
 
