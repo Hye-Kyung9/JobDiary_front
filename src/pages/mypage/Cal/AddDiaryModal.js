@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import Datetime from "react-datetime";
 
-export default function ({ isOpen, onClose, onEventAdded }) {
+export default function AddDiaryModal({ isOpen, onClose, onEventAdded }) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [start, setStart] = useState(new Date());

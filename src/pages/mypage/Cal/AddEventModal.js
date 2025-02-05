@@ -4,7 +4,7 @@ import Datetime from "react-datetime";
 import Footer from "../../../layouts/Footer";
 // import { Button } from "react-bootstrap";
 
-export default function ({ isOpen, onClose, onEventAdded }) {
+export default function AddEventModal({ isOpen, onClose, onEventAdded }) {
   const [title, setTitle] = useState("");
   const [start, setStart] = useState(new Date());
   const [end, setEnd] = useState(new Date());
